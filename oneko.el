@@ -34,7 +34,7 @@
     (erase-buffer)
     (insert-image (create-image (oneko--image "right_2") nil nil :scale 1.0))))
 
-(defvar oneko-speed 7)
+(defvar oneko-speed 10)
 (defvar oneko-wait 0)
 (defvar oneko-sleepy 0)
 
@@ -126,11 +126,15 @@
 (defvar oneko-timer nil)
 (defvar oneko-interval 0.1)
 (defun oneko-start ()
+  "Start oneko."
+  (interactive)
   (oneko--initialize)
   (setq oneko-timer
 	(run-at-time 0 oneko-interval #'oneko--update)))
 
 (defun oneko-stop ()
+  "Stop oneko."
+  (interactive)
   (cancel-timer oneko-timer)
   (posframe-hide oneko-buffer))
 
