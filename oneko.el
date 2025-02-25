@@ -163,3 +163,6 @@
 (defun oneko--vector-normalize (vec)
   (let ((length (oneko--vector-length vec)))
     (cons (/ (car vec) length) (/ (cdr vec) length))))
+
+(provide 'oneko)
+;;; oneko.el ends here
